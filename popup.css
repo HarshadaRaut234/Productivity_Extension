@@ -1,0 +1,172 @@
+/* General styles for the popup */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #FFD1DC; /* Default background color */
+  width: 350px; /* Set a fixed width for the popup */
+  height: auto;
+  border-radius: 25px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  border: 1px solid #f7b8b8;
+  transition: background-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+/* Title style */
+h1, h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #000000;
+}
+
+/* Container for the template selection */
+.template-container {
+  margin-bottom: 20px;
+}
+
+/* Individual template button style */
+.template-button {
+  display: block;
+  padding: 10px;
+  margin: 5px 0;
+  background-color: #007BFF; /* Bootstrap primary color */
+  color: rgb(3, 252, 19);
+  text-align: center;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  text-decoration: none; /* Remove underline from links */
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for template buttons */
+.template-button:hover {
+  background-color: #2200ff; /* Darker shade of primary color */
+}
+
+/* Style for customizable fields */
+.custom-field {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Timer Display */
+#timer-display {
+  font-size: 2.5em;
+  margin: 10px 0;
+  font-style: italic;
+}
+
+/* Label style */
+label {
+  font-size: 14px;
+  margin-bottom: 5px;
+  display: block;
+}
+
+/* Style for save button */
+.save-button {
+  padding: 10px;
+  background-color: #77DD77; /* Bootstrap success color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for save button */
+.save-button:hover {
+  background-color: #218838; /* Darker shade of success color */
+}
+
+/* Button Styles */
+button {
+  margin: 10px 0;
+  padding: 5px;
+  width: 180px;
+  background-color: #4CAF50; /* Default button color */
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  font-style: italic;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Button Hover Effect */
+button:hover {
+  background-color: #45a049;
+  opacity: 0.85;
+}
+
+/* Circular Button Styles for Timer */
+.circle-button {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: none;
+  color: black;
+  cursor: pointer;
+  font-size: 18px;
+  margin: 0 10px;
+}
+
+/* Start and Pause Button */
+#start-pause-btn {
+  background-color: #a8e6cf;
+}
+
+/* Reset Button */
+#reset-btn {
+  background-color: #a6caff;
+  font-size: 30px;
+}
+
+/* Short Break Mode Styling */
+body.short-break-mode {
+  background-color: #a6caff;
+}
+
+/* Lap Message Styling */
+.lap-message {
+  font-size: 1.2rem;
+  color: green;
+  margin-top: 10px;
+  display: none; /* Initially hidden */
+}
+
+/* Footer style */
+footer {
+  text-align: center;
+  font-size: 12px;
+  color: #666;
+  margin-top: 5px;
+}
+
+/* Status message */
+#status {
+  font-size: 12px;
+  margin-top: 10px;
+  color: #333;
+  text-align: center;
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 800px) {
+  body {
+      width: 90%;
+      height: auto;
+  }
+
+  .circle-button {
+      width: 70px;
+      height: 70px;
+      font-size: 16px;
+  }
+}

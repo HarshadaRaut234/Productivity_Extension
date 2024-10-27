@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email & Privacy Enhancer with App Locker</title>
+  <link rel="stylesheet" href="main.css"> <!-- Use your main CSS file for styles -->
+  <link rel="stylesheet" href="styles.css"> <!-- Include email templates CSS -->
+  <link rel="stylesheet" href="popup.css"> <!-- Include App Locker CSS -->
+  <style>
+    /* Style for locked state */
+    .locked {
+      display: none; /* Initially hidden */
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Main Content -->
+  <div id="main-content">
+    <!-- Privacy Enhancer Section -->
+    <div class="section">
+      <h1>Privacy Enhancer</h1>
+      <button id="toggleAdblock">Toggle Ad Blocker</button><br>
+      <button id="toggleScriptBlocker">Toggle Script Blocker</button><br>
+      <button id="clearCookies">Clear Cookies</button>
+    </div>
+
+    <!-- Pomodoro Timer Section -->
+    <div class="section">
+      <h1>Pomodoro Timer</h1>
+      <div id="timer-display">25:00</div>
+      <div class="button-container">
+        <button class="circle-button" id="start-pause-btn">►</button>
+        <button id="reset-btn" class="circle-button">⟳</button>
+        <button id="short-break-btn" class="circle-button">Short Break</button>
+        <div id="lap-message" class="lap-message"></div>
+      </div>
+    </div>
+
+    <!-- Email Templates Section -->
+    <div class="section">
+      <h1>Email Templates</h1>
+      <div class="template-container">
+        <div id="template-list"></div>
+      </div>
+      <input type="text" class="custom-field" id="template-name" placeholder="Template Name">
+      <textarea class="custom-field" id="template-content" rows="5" placeholder="Template Content"></textarea>
+      <button class="save-button" id="save-template">Save Template</button>
+    </div>
+
+    <!-- App Locker Section -->
+    <div class="section">
+      <h3>Set App Lock Timer</h3>
+      <label for="time">Enter time in minutes:</label>
+      <input type="number" id="time" name="time" min="1">
+      <button id="startTimer">Start Timer</button>
+      <p id="status"></p>
+    </div>
+  </div>
+
+  <!-- Locked State Section -->
+  <div class="locked" id="locked-state">
+    <h1>This site has been locked</h1>
+    <p>You can return once the timer resets.</p>
+  </div>
+
+  <footer>
+    <p>Footer Text</p>
+  </footer>
+
+  <script src="main.js"></script> <!-- Main JS for Pomodoro and Privacy Enhancer -->
+  <script src="popup.js"></script> <!-- JS for Email Templates -->
+  <script>
+    let isLocked = false;
+
+    // Example timer functionality
+    document.getElementById('startTimer').addEventListener('click', function() {
+      const minutes = parseInt(document.getElementById('time').value);
+      if (isNaN(minutes) || minutes < 1) return;
+
+      // Lock the site
+      isLocked = true;
+      document.getElementById('main-content').style.display = 'none';
+      document.getElementById('locked-state').style.display = 'block';
+
+      // Timer logic
+      setTimeout(function() {
+        isLocked = false;
+        document.getElementById('main-content').style.display = 'block';
+        document.getElementById('locked-state').style.display = 'none';
+      }, minutes * 60000); // Convert minutes to milliseconds
+    });
+  </script>
+</body>
+</html>

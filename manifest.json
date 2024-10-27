@@ -1,0 +1,55 @@
+{
+  "manifest_version": 3,
+  "name": "App Locker & Email Privacy Enhancer",
+  "version": "1.0",
+  "description": "Locks an app after an amount of time, manages customizable email templates, enhances privacy by blocking ads, managing cookies, and stays productive with a built-in Pomodoro timer.",
+  "permissions": [
+      "storage",
+      "alarms",
+      "tabs",
+      "declarativeNetRequest",
+      "activeTab",
+      "scripting",
+      "cookies"
+  ],
+  "host_permissions": [
+      "<all_urls>",
+      "https://mail.google.com/*",
+      "https://outlook.live.com/*",
+      "*://*/*"
+  ],
+  "background": {
+      "service_worker": "background.js"
+  },
+  "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+          "16": "mailicon16.png",
+          "48": "mailicon48.png",
+          "128": "lock.png"
+      },
+      "default_title": "App Locker & Privacy Enhancer"
+  },
+  "icons": {
+      "16": "mailicon16.png",
+      "48": "mailicon48.png",
+      "128": "lock.png"
+  },
+  "web_accessible_resources": [{
+      "resources": ["locked.html"],
+      "matches": ["<all_urls>"]
+  }],
+  "content_scripts": [{
+      "matches": ["<all_urls>"],
+      "js": ["contentscript.js"]
+  }],
+  "declarative_net_request": {
+      "rule_resources": [
+          {
+              "id": "ruleset_1",
+              "enabled": true,
+              "path": "rule.json"
+          }
+      ]
+  }
+}

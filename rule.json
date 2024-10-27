@@ -1,0 +1,57 @@
+[
+  {
+      "id": 1,
+      "priority": 1,
+      "action": {
+          "type": "block"
+      },
+      "condition": {
+          "urlFilter": "*://*.doubleclick.net/*",
+          "resourceTypes": ["main_frame", "script", "image", "sub_frame"]
+      }
+  },
+  {
+      "id": 2,
+      "priority": 1,
+      "action": {
+          "type": "block"
+      },
+      "condition": {
+          "urlFilter": "*://*.googlesyndication.com/*",
+          "resourceTypes": ["main_frame", "script", "image", "sub_frame"]
+      }
+  },
+  {
+      "id": 3,
+      "priority": 1,
+      "action": {
+          "type": "block"
+      },
+      "condition": {
+          "urlFilter": "*://*.googleadservices.com/*",
+          "resourceTypes": ["main_frame", "script", "image", "sub_frame"]
+      }
+  },
+  {
+      "id": 4,
+      "priority": 1,
+      "action": {
+          "type": "block"
+      },
+      "condition": {
+          "urlFilter": "https://exch.quantserve.com/*",
+          "resourceTypes": ["main_frame", "script", "image", "sub_frame"]
+      }
+  },
+  {
+      "id": 5,
+      "priority": 1,
+      "action": {
+          "type": "block"
+      },
+      "condition": {
+          "urlFilter": "https://www.bitsler.online/*",
+          "resourceTypes": ["main_frame", "script", "image", "sub_frame"]
+      }
+  }
+]
